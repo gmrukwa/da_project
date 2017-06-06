@@ -11,10 +11,10 @@ namespace Backend.Entities
 {
     public class Vacation
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int VacationId { get; set; }
-        [ForeignKey(nameof(Employee))]
         public int EmployeeId { get; set; }
+        [ForeignKey(nameof(EmployeeId))]
         public Employee Employee { get; set; }
         public DateTime BeginningDate { get; set; }
         public DateTime EndDate { get; set; }

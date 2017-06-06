@@ -11,12 +11,14 @@ namespace Backend.Entities
 {
     public class Site
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiteId { get; set; }
         public string Address { get; set; }
         public string Name { get; set; }
-        [ForeignKey(nameof(Boss))]
-        public int BossId { get; set; }
+        public int? BossId { get; set; }
+        [ForeignKey(nameof(BossId))]
         public Employee Boss { get; set; }
+        [InverseProperty(nameof(Site))]
+        public List<Employee> Employees { get; set; }
     }
 }

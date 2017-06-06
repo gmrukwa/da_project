@@ -11,13 +11,13 @@ namespace Backend.Entities
 {
     public class Salary
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SalaryId { get; set; }
-        [ForeignKey(nameof(Project))]
-        public int ProjectId { get; set; }
+        public int? ProjectId { get; set; }
+        [ForeignKey(nameof(ProjectId))]
         public Project Project { get; set; }
-        [ForeignKey(nameof(Employee))]
-        public int EmployeeId { get; set; }
+        public int? EmployeeId { get; set; }
+        [ForeignKey(nameof(EmployeeId))]
         public Employee Employee { get; set; }
         public double Amount { get; set; }
         public DateTime Date { get; set; }
