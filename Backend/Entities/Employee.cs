@@ -11,14 +11,20 @@ namespace Backend.Entities
 {
     public class Employee
     {
-        [Key]
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EmployeeId { get; set; }
         public string Name { get; set; }
         public string Position { get; set; }
         public DateTime BirthDate { get; set; }
         public DateTime EmploymentDate { get; set; }
-        [ForeignKey(nameof(Site))]
         public int SiteId { get; set; }
+        [ForeignKey(nameof(SiteId))]
         public virtual Site Site { get; set; }
+        [InverseProperty("Manager")]
+        public List<Project> ManagedProjects { get; set; }
+        [InverseProperty("Boss")]
+        public List<Site> ManagesSites { get; set; }
+        [InverseProperty("Employee")]
+        public List<Salary> Salaries { get; set; }
     }
 }
