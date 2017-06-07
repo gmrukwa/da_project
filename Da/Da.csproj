@@ -64,8 +64,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="AddUpdateWindow.xaml.cs">
+      <DependentUpon>AddUpdateWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Services\EmployeesService.cs" />
+    <Compile Include="ViewModels\AddEntityVms\EmployeeVm.cs" />
+    <Compile Include="ViewModels\AddEntityVms\ProjectVm.cs" />
+    <Compile Include="ViewModels\AddEntityVms\SalaryVm.cs" />
+    <Compile Include="ViewModels\AddEntityVms\SiteVm.cs" />
+    <Compile Include="ViewModels\AddEntityVms\VacationVm.cs" />
     <Compile Include="ViewModels\MainWindowVm.cs" />
+    <Page Include="AddUpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>

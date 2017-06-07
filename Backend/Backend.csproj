@@ -61,6 +61,12 @@
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Spectre.Mvvm\Spectre.Mvvm.csproj">
+      <Project>{2d24f1e7-18d4-4fc0-9e4f-2f32ff27fcce}</Project>
+      <Name>Spectre.Mvvm</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

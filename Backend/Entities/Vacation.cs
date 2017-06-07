@@ -6,17 +6,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Backend.Utils;
+using Spectre.Mvvm.Base;
 
 namespace Backend.Entities
 {
-    public class Vacation
+    public class Vacation : PropertyChangedNotification
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int VacationId { get; set; }
-        public int EmployeeId { get; set; }
+        public int VacationId { get { return GetValue(() => VacationId); } set { SetValue(() => VacationId, value); } }
+        public int EmployeeId { get { return GetValue(() => EmployeeId); } set { SetValue(() => EmployeeId, value); } }
         [ForeignKey(nameof(EmployeeId))]
-        public Employee Employee { get; set; }
-        public DateTime BeginningDate { get; set; }
-        public DateTime EndDate { get; set; }
+        public Employee Employee { get { return GetValue(() => Employee); } set { SetValue(() => Employee, value); } }
+        public DateTime BeginningDate { get { return GetValue(() => BeginningDate); } set { SetValue(() => BeginningDate, value); } }
+        public DateTime EndDate { get { return GetValue(() => EndDate); } set { SetValue(() => EndDate, value); } }
     }
 }
