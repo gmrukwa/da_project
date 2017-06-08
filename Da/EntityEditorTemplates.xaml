@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Da"
+                    xmlns:vms="clr-namespace:Da.ViewModels.AddEntityVms">
+    
+    <!--Employee-->
+    <DataTemplate DataType="{x:Type vms:EmployeeVm}">
+        
+        <Grid>
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            
+            <!--Name-->
+            <Label Content="Name" Grid.Column="0" Grid.Row="0"/>
+            <TextBox Text="{Binding Path=Employee.Name}" Grid.Column="1" Grid.Row="0"/>
+            
+            <!--Position-->
+            <Label Content="Position" Grid.Column="0" Grid.Row="1"/>
+            <TextBox Text="{Binding Path=Employee.Position}" Grid.Column="1" Grid.Row="1"/>
+            
+            <!--BirthDate-->
+            <Label Content="BirthDate" Grid.Column="0" Grid.Row="2"/>
+            <DatePicker Text="{Binding Path=Employee.BirthDate}" Grid.Column="1" Grid.Row="2"/>
+
+            <!--EmploymentDate-->
+            <Label Content="EmploymentDate" Grid.Column="0" Grid.Row="3"/>
+            <DatePicker Text="{Binding Path=Employee.EmploymentDate}" Grid.Column="1" Grid.Row="3"/>
+            
+            <!--Site-->
+            <Label Content="Site" Grid.Column="0" Grid.Row="4"/>
+            <ListBox ItemsSource="{Binding Path=Sites}"
+                     SelectedItem="{Binding Path=Employee.Site}"
+                     Grid.Column="1" Grid.Row="4">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+        
+    </DataTemplate>
+    
+</ResourceDictionary>

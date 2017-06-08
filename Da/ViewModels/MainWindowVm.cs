@@ -7,7 +7,8 @@ namespace Da.ViewModels
 {
     class MainWindowVm: PropertyChangedNotification
     {
-        readonly EmployeesService _employeesService = new EmployeesService();
+        private readonly EmployeesService _employeesService = new EmployeesService();
+        private readonly EditorService _editorService = new EditorService();
 
         public ObservableCollection<Employee> Employees
         {
@@ -15,6 +16,7 @@ namespace Da.ViewModels
             set { SetValue(() => Employees, value); }
         }
 
+        #region Refresh
         private RelayCommand _refreshCommand;
 
         public RelayCommand RefreshCommand
@@ -27,5 +29,21 @@ namespace Da.ViewModels
                        }));
             }
         }
+        #endregion
+
+        #region NewEmployee
+        private RelayCommand _newEmployee;
+
+        public RelayCommand NewEmployee
+        {
+            get
+            {
+                return _newEmployee ?? (_newEmployee = new RelayCommand(() =>
+                       {
+                           _editorService.EditNew<Employee>();
+                       }));
+            }
+        }
+        #endregion
     }
 }

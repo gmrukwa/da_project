@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using Da.ViewModels.AddEntityVms;
 
 namespace Da
 {
@@ -19,9 +20,21 @@ namespace Da
     /// </summary>
     public partial class AddUpdateWindow : Window
     {
-        public AddUpdateWindow()
+        public AddUpdateWindow(IAddEntityVm vm)
         {
             InitializeComponent();
+
+            DataContext = vm;
+        }
+
+        private void AcceptChanges(object sender, RoutedEventArgs e)
+        {
+            DialogResult = true;
+        }
+
+        private void DiscardChanges(object sender, RoutedEventArgs e)
+        {
+            DialogResult = false;
         }
     }
 }

@@ -10,7 +10,7 @@ using Spectre.Mvvm.Base;
 
 namespace Backend.Entities
 {
-    public class Site : PropertyChangedNotification
+    public class Site : Entity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int SiteId { get { return GetValue(() => SiteId); } set { SetValue(() => SiteId, value); } }
@@ -21,5 +21,6 @@ namespace Backend.Entities
         public Employee Boss { get { return GetValue(() => Boss); } set { SetValue(() => Boss, value); } }
         [InverseProperty(nameof(Site))]
         public List<Employee> Employees { get { return GetValue(() => Employees); } set { SetValue(() => Employees, value); } }
+        public override int GetId() => SiteId;
     }
 }

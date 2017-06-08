@@ -9,7 +9,7 @@ using Spectre.Mvvm.Base;
 
 namespace Da.ViewModels.AddEntityVms
 {
-    class VacationVm: PropertyChangedNotification
+    class VacationVm: AddEntityVm<Vacation>
     {
         public Vacation Vacation { get { return GetValue(() => Vacation); } set { SetValue(() => Vacation, value); } }
 
@@ -18,6 +18,7 @@ namespace Da.ViewModels.AddEntityVms
         public VacationVm(Vacation vacation)
         {
             Vacation = vacation;
+            AllEmployees = new ObservableCollection<Employee>();
             // @gmrukwa: TODO read available employees
         }
     }

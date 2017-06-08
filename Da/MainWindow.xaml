@@ -17,9 +17,16 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
-        <Button Content="Refresh"
-                Command="{Binding RefreshCommand}"/>
-        
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="New employee"
+                    Command="{Binding NewEmployee}"
+                    Margin="5"/>
+            
+            <Button Content="Refresh"
+                    Command="{Binding RefreshCommand}"
+                    Margin="5"/>
+        </StackPanel>
+            
         <DataGrid x:Name="dataGrid"
                   HorizontalAlignment="Left"
                   Margin="10,10,0,0"

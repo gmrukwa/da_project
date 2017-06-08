@@ -9,7 +9,7 @@ using Spectre.Mvvm.Base;
 
 namespace Da.ViewModels.AddEntityVms
 {
-    class SiteVm: PropertyChangedNotification
+    class SiteVm: AddEntityVm<Site>
     {
         public Site Site { get { return GetValue(() => Site); } set { SetValue(() => Site, value); } }
 
@@ -18,6 +18,7 @@ namespace Da.ViewModels.AddEntityVms
         public SiteVm(Site site)
         {
             Site = site;
+            AllEmployees = new ObservableCollection<Employee>();
             // @gmrukwa: TODO read existing employees
         }
     }

@@ -67,14 +67,21 @@
     <Compile Include="AddUpdateWindow.xaml.cs">
       <DependentUpon>AddUpdateWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Services\EditorService.cs" />
     <Compile Include="Services\EmployeesService.cs" />
+    <Compile Include="ViewModels\AddEntityVms\AddEntityVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\EmployeeVm.cs" />
+    <Compile Include="ViewModels\AddEntityVms\IAddEntityVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\ProjectVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\SalaryVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\SiteVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\VacationVm.cs" />
     <Compile Include="ViewModels\MainWindowVm.cs" />
     <Page Include="AddUpdateWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EntityEditorTemplates.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

@@ -10,7 +10,7 @@ using Spectre.Mvvm.Base;
 
 namespace Backend.Entities
 {
-    public class Vacation : PropertyChangedNotification
+    public class Vacation : Entity
     {
         [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int VacationId { get { return GetValue(() => VacationId); } set { SetValue(() => VacationId, value); } }
@@ -19,5 +19,7 @@ namespace Backend.Entities
         public Employee Employee { get { return GetValue(() => Employee); } set { SetValue(() => Employee, value); } }
         public DateTime BeginningDate { get { return GetValue(() => BeginningDate); } set { SetValue(() => BeginningDate, value); } }
         public DateTime EndDate { get { return GetValue(() => EndDate); } set { SetValue(() => EndDate, value); } }
+
+        public override int GetId() => VacationId;
     }
 }

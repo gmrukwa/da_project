@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Employee.cs" />
+    <Compile Include="Entities\Entity.cs" />
     <Compile Include="Entities\Project.cs" />
     <Compile Include="Entities\Salary.cs" />
     <Compile Include="Entities\Site.cs" />

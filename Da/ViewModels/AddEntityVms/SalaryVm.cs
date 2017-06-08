@@ -9,7 +9,7 @@ using Spectre.Mvvm.Base;
 
 namespace Da.ViewModels.AddEntityVms
 {
-    class SalaryVm: PropertyChangedNotification
+    class SalaryVm: AddEntityVm<Salary>
     {
         public Salary Salary { get { return GetValue(() => Salary); } set { SetValue(() => Salary, value);} }
 
@@ -19,6 +19,8 @@ namespace Da.ViewModels.AddEntityVms
         public SalaryVm(Salary salary)
         {
             Salary = salary;
+            AllSalaries = new ObservableCollection<Salary>();
+            AllProjects = new ObservableCollection<Project>();
             // @gmrukwa: TODO: read all other entities.
         }
     }
