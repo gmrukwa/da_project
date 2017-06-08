@@ -1,0 +1,49 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vms="clr-namespace:Da.ViewModels.AddEntityVms">
+
+    <!--Project-->
+    <DataTemplate DataType="{x:Type vms:ProjectVm}">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Name-->
+            <Label Content="Name" Grid.Column="0" Grid.Row="0"/>
+            <TextBox Text="{Binding Path=Project.Name}" Grid.Column="1" Grid.Row="0"/>
+
+            <!--Description-->
+            <Label Content="Description" Grid.Column="0" Grid.Row="1"/>
+            <TextBox Text="{Binding Path=Project.Description}" Grid.Column="1" Grid.Row="1"/>
+
+            <!--StartDate-->
+            <Label Content="StartDate" Grid.Column="0" Grid.Row="2"/>
+            <DatePicker Text="{Binding Path=Project.StartDate}" Grid.Column="1" Grid.Row="2"/>
+
+            <!--Manager-->
+            <Label Content="Manager" Grid.Column="0" Grid.Row="3"/>
+            <ListBox ItemsSource="{Binding Path=AllEmployees}"
+                     SelectedItem="{Binding Path=Project.Manager}"
+                     Grid.Column="1" Grid.Row="3">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+        </Grid>
+
+    </DataTemplate>
+
+</ResourceDictionary>

@@ -1,12 +1,6 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backend.Utils;
-using Spectre.Mvvm.Base;
 
 namespace Backend.Entities
 {
@@ -21,6 +15,7 @@ namespace Backend.Entities
         [ForeignKey(nameof(EmployeeId))]
         public Employee Employee { get { return GetValue(() => Employee); } set { SetValue(() => Employee, value); } }
         public double Amount { get { return GetValue(() => Amount); } set { SetValue(() => Amount, value); } }
+        [Column(TypeName = "datetime2")]
         public DateTime Date { get { return GetValue(() => Date); } set { SetValue(() => Date, value); } }
         public bool Paid { get { return GetValue(() => Paid); } set { SetValue(() => Paid, value); } }
         public override int GetId() => SalaryId;

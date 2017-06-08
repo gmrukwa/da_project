@@ -5,26 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Da"
         mc:Ignorable="d"
-        Title="AddUpdateWindow" Height="300" Width="425.523">
+        Title="Editor"
+        SizeToContent="WidthAndHeight"
+        ResizeMode="NoResize">
     <Window.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="EntityEditorTemplates.xaml"/>
+                <ResourceDictionary Source="../Styles.xaml"/>
+                <ResourceDictionary Source="../EntityEditorTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
 
         <ContentPresenter Grid.Row="0" Content="{Binding DataContext, ElementName=window}"/>
 
         <StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Right">
-            <Button Content="Save" Click="AcceptChanges" Width="75" Margin="5"/>
-            <Button Content="Reject" Click="DiscardChanges" Width="75" Margin="5"/>
+            <Button Content="Save" Click="AcceptChanges"/>
+            <Button Content="Reject" Click="DiscardChanges"/>
         </StackPanel>
 
     </Grid>

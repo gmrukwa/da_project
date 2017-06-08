@@ -2,11 +2,6 @@
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Backend.Utils;
-using Spectre.Mvvm.Base;
 
 namespace Backend.Entities
 {
@@ -16,7 +11,9 @@ namespace Backend.Entities
         public int EmployeeId { get { return GetValue(() => EmployeeId); } set { SetValue(() => EmployeeId, value); } }
         public string Name { get { return GetValue(() => Name); } set { SetValue(() => Name, value); } }
         public string Position { get { return GetValue(() => Position); } set { SetValue(() => Position, value); } }
+        [Column(TypeName = "datetime2")]
         public DateTime BirthDate { get { return GetValue(() => BirthDate); } set { SetValue(() => BirthDate, value); } }
+        [Column(TypeName = "datetime2")]
         public DateTime EmploymentDate { get { return GetValue(() => EmploymentDate); } set { SetValue(() => EmploymentDate, value); } }
         public int SiteId { get { return GetValue(() => SiteId); } set { SetValue(() => SiteId, value); } }
         [ForeignKey(nameof(SiteId))]

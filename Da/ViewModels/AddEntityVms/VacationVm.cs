@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Backend.Entities;
+using Da.Services;
 using Spectre.Mvvm.Base;
 
 namespace Da.ViewModels.AddEntityVms
@@ -15,11 +16,10 @@ namespace Da.ViewModels.AddEntityVms
 
         public ObservableCollection<Employee> AllEmployees { get { return GetValue(() => AllEmployees); } set { SetValue(() => AllEmployees, value); } }
 
-        public VacationVm(Vacation vacation)
+        public VacationVm(Vacation vacation, DataService dataService) : base(dataService)
         {
             Vacation = vacation;
-            AllEmployees = new ObservableCollection<Employee>();
-            // @gmrukwa: TODO read available employees
+            AllEmployees = new ObservableCollection<Employee>(DataService.GetData<Employee>());
         }
     }
 }
