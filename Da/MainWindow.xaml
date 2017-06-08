@@ -13,6 +13,7 @@
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary Source="Views/Styles.xaml"/>
+                <ResourceDictionary Source="Views/EntityDisplayTemplates.xaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Window.Resources>
@@ -42,12 +43,55 @@
                     Command="{Binding RefreshCommand}"/>
         </StackPanel>
             
-        <DataGrid x:Name="dataGrid"
+        <!--<DataGrid x:Name="dataGrid"
                   HorizontalAlignment="Left"
                   Margin="10"
                   VerticalAlignment="Top"
                   Grid.Row="1"
-                  ItemsSource="{Binding Path=Employees}"/>
+                  ItemsSource="{Binding Path=Employees}"/>-->
+        
+        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Grid.Row="1">
+            <TabItem Header="Employees">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Employees}">
+                        
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Projects">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Projects}">
+
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Salaries">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Salaries}">
+
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Sites">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Sites}">
+
+                    </ListView>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Vacations">
+                <Grid Background="#FFE5E5E5">
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Vacations}">
+
+                    </ListView>
+                </Grid>
+            </TabItem>
+        </TabControl>
 
     </Grid>
 </Window>
