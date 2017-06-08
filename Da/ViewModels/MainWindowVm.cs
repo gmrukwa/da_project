@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Backend.Entities;
 using Da.Services;
+using Da.ViewModels.DisplayableEntities;
 using Spectre.Mvvm.Base;
 
 namespace Da.ViewModels
@@ -10,40 +12,42 @@ namespace Da.ViewModels
     {
         private readonly DataService _dataService;
         private readonly EditorService _editorService;
+        private readonly RefreshingService _refreshingService;
 
         public MainWindowVm()
         {
             _dataService = new DataService();
-            _editorService = new EditorService(_dataService);
+            _refreshingService = new RefreshingService(this);
+            _editorService = new EditorService(_dataService, _refreshingService);
             RefreshCommand.Execute(null);
         }
 
         #region Collections
-        public ObservableCollection<Employee> Employees
+        public ObservableCollection<DisplayableEmployee> Employees
         {
             get { return GetValue(() => Employees); }
             set { SetValue(() => Employees, value); }
         }
 
-        public ObservableCollection<Project> Projects
+        public ObservableCollection<DisplayableProject> Projects
         {
             get { return GetValue(() => Projects); }
             set { SetValue(() => Projects, value); }
         }
 
-        public ObservableCollection<Salary> Salaries
+        public ObservableCollection<DisplayableSalary> Salaries
         {
             get { return GetValue(() => Salaries); }
             set { SetValue(() => Salaries, value); }
         }
 
-        public ObservableCollection<Site> Sites
+        public ObservableCollection<DisplayableSite> Sites
         {
             get { return GetValue(() => Sites); }
             set { SetValue(() => Sites, value); }
         }
 
-        public ObservableCollection<Vacation> Vacations
+        public ObservableCollection<DisplayableVacation> Vacations
         {
             get { return GetValue(() => Vacations); }
             set { SetValue(() => Vacations, value); }
@@ -63,31 +67,31 @@ namespace Da.ViewModels
                            {
                                if(ex!=null)
                                    throw new InvalidOperationException("Check inner exception", ex);
-                               Employees = new ObservableCollection<Employee>(dbset.Include("Site"));
+                               Employees = new ObservableCollection<DisplayableEmployee>(dbset.Include("Site").ToList().Select(e => new DisplayableEmployee(e, _editorService)));
                            });
                            _dataService.GetData<Project>((dbset, ex) =>
                            {
                                if (ex != null)
                                    throw new InvalidOperationException("Check inner exception", ex);
-                               Projects = new ObservableCollection<Project>(dbset.Include("Manager"));
+                               Projects = new ObservableCollection<DisplayableProject>(dbset.Include("Manager").ToList().Select(e => new DisplayableProject(e, _editorService)));
                            });
                            _dataService.GetData<Salary>((dbset, ex) =>
                            {
                                if (ex != null)
                                    throw new InvalidOperationException("Check inner exception", ex);
-                               Salaries = new ObservableCollection<Salary>(dbset.Include("Employee").Include("Project"));
+                               Salaries = new ObservableCollection<DisplayableSalary>(dbset.Include("Project").Include("Employee").ToList().Select(e => new DisplayableSalary(e, _editorService)));
                            });
                            _dataService.GetData<Site>((dbset, ex) =>
                            {
                                if (ex != null)
                                    throw new InvalidOperationException("Check inner exception", ex);
-                               Sites = new ObservableCollection<Site>(dbset.Include("Boss"));
+                               Sites = new ObservableCollection<DisplayableSite>(dbset.Include("Boss").ToList().Select(e => new DisplayableSite(e, _editorService)));
                            });
                            _dataService.GetData<Vacation>((dbset, ex) =>
                            {
                                if (ex != null)
                                    throw new InvalidOperationException("Check inner exception", ex);
-                               Vacations = new ObservableCollection<Vacation>(dbset.Include("Employee"));
+                               Vacations = new ObservableCollection<DisplayableVacation>(dbset.Include("Employee").ToList().Select(e => new DisplayableVacation(e, _editorService)));
                            });
                        }));
             }

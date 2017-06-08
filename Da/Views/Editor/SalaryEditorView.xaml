@@ -20,9 +20,9 @@
             </Grid.RowDefinitions>
 
             <!--Project-->
-            <Label Content="Project" Grid.Column="0" Grid.Row="0"/>
+            <Label Content="Entity" Grid.Column="0" Grid.Row="0"/>
             <ListBox ItemsSource="{Binding Path=AllProjects}"
-                     SelectedItem="{Binding Path=Salary.Project}"
+                     SelectedItem="{Binding Path=Entity.Project}"
                      Grid.Column="1" Grid.Row="0"
                      MaxHeight="150">
                 <ListBox.ItemTemplate>
@@ -33,9 +33,9 @@
             </ListBox>
 
             <!--Employee-->
-            <Label Content="Employee" Grid.Column="0" Grid.Row="1"/>
+            <Label Content="Entity" Grid.Column="0" Grid.Row="1"/>
             <ListBox ItemsSource="{Binding Path=AllEmployees}"
-                     SelectedItem="{Binding Path=Salary.Employee}"
+                     SelectedItem="{Binding Path=Entity.Employee}"
                      Grid.Column="1" Grid.Row="1"
                      MaxHeight="150">
                 <ListBox.ItemTemplate>
@@ -48,7 +48,7 @@
             <!--Amount-->
             <Label Content="Amount" Grid.Column="0" Grid.Row="2"/>
             <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
-                <Slider Value="{Binding Path=Salary.Amount}"
+                <Slider Value="{Binding Path=Entity.Amount}"
                         Name="slider"
                         Minimum="0" Maximum="10000"
                         Width="300" IsSnapToTickEnabled="True"/>
@@ -57,11 +57,11 @@
 
             <!--Date-->
             <Label Content="Date" Grid.Column="0" Grid.Row="3"/>
-            <DatePicker Text="{Binding Path=Salary.Date}" Grid.Column="1" Grid.Row="3"/>
+            <DatePicker Text="{Binding Path=Entity.Date}" Grid.Column="1" Grid.Row="3"/>
 
             <!--Paid-->
             <Label Content="Paid" Grid.Column="0" Grid.Row="4"/>
-            <CheckBox IsChecked="{Binding Path=Salary.Paid}"
+            <CheckBox IsChecked="{Binding Path=Entity.Paid}"
                       Grid.Column="1" Grid.Row="4"/>
 
         </Grid>

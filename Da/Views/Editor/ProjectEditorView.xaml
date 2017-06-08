@@ -20,20 +20,20 @@
 
             <!--Name-->
             <Label Content="Name" Grid.Column="0" Grid.Row="0"/>
-            <TextBox Text="{Binding Path=Project.Name}" Grid.Column="1" Grid.Row="0"/>
+            <TextBox Text="{Binding Path=Entity.Name}" Grid.Column="1" Grid.Row="0"/>
 
             <!--Description-->
             <Label Content="Description" Grid.Column="0" Grid.Row="1"/>
-            <TextBox Text="{Binding Path=Project.Description}" Grid.Column="1" Grid.Row="1"/>
+            <TextBox Text="{Binding Path=Entity.Description}" Grid.Column="1" Grid.Row="1"/>
 
             <!--StartDate-->
             <Label Content="StartDate" Grid.Column="0" Grid.Row="2"/>
-            <DatePicker Text="{Binding Path=Project.StartDate}" Grid.Column="1" Grid.Row="2"/>
+            <DatePicker Text="{Binding Path=Entity.StartDate}" Grid.Column="1" Grid.Row="2"/>
 
             <!--Manager-->
             <Label Content="Manager" Grid.Column="0" Grid.Row="3"/>
             <ListBox ItemsSource="{Binding Path=AllEmployees}"
-                     SelectedItem="{Binding Path=Project.Manager}"
+                     SelectedItem="{Binding Path=Entity.Manager}"
                      Grid.Column="1" Grid.Row="3">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

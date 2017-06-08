@@ -18,9 +18,9 @@
             </Grid.RowDefinitions>
 
             <!--Employee-->
-            <Label Content="Employee" Grid.Column="0" Grid.Row="0"/>
+            <Label Content="Entity" Grid.Column="0" Grid.Row="0"/>
             <ListBox ItemsSource="{Binding Path=AllEmployees}"
-                     SelectedItem="{Binding Path=Vacation.Employee}"
+                     SelectedItem="{Binding Path=Entity.Employee}"
                      Grid.Column="1" Grid.Row="0"
                      MaxHeight="150">
                 <ListBox.ItemTemplate>
@@ -32,11 +32,11 @@
             
             <!--BeginningDate-->
             <Label Content="BeginningDate" Grid.Column="0" Grid.Row="1"/>
-            <DatePicker Text="{Binding Path=Vacation.BeginningDate}" Grid.Column="1" Grid.Row="1"/>
+            <DatePicker Text="{Binding Path=Entity.BeginningDate}" Grid.Column="1" Grid.Row="1"/>
             
             <!--EndDate-->
             <Label Content="EndDate" Grid.Column="0" Grid.Row="2"/>
-            <DatePicker Text="{Binding Path=Vacation.EndDate}" Grid.Column="1" Grid.Row="2"/>
+            <DatePicker Text="{Binding Path=Entity.EndDate}" Grid.Column="1" Grid.Row="2"/>
 
         </Grid>
         

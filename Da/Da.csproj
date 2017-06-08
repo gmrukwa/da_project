@@ -64,12 +64,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Services\RefreshingService.cs" />
+    <Compile Include="ViewModels\DisplayableEntities\DisplayableEmployee.cs" />
+    <Compile Include="ViewModels\DisplayableEntities\DisplayableProject.cs" />
+    <Compile Include="ViewModels\DisplayableEntities\DisplayableSalary.cs" />
+    <Compile Include="ViewModels\DisplayableEntities\DisplayableSite.cs" />
+    <Compile Include="ViewModels\DisplayableEntities\DisplayableVacation.cs" />
+    <Compile Include="ViewModels\DisplayableEntityVm.cs" />
+    <Compile Include="ViewModels\IDisplayableEntity.cs" />
     <Compile Include="Views\Windows\AddUpdateWindow.xaml.cs">
       <DependentUpon>AddUpdateWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="Services\EditorService.cs" />
     <Compile Include="Services\DataService.cs" />
-    <Compile Include="ViewModels\AddEntityVms\AddEntityVm.cs" />
+    <Compile Include="ViewModels\AddEntityVms\EditableEntityVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\EmployeeVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\IAddEntityVm.cs" />
     <Compile Include="ViewModels\AddEntityVms\ProjectVm.cs" />
