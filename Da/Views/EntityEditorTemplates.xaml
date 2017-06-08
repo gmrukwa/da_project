@@ -1,0 +1,14 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:Da"
+                    xmlns:vms="clr-namespace:Da.ViewModels.AddEntityVms">
+    
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="Editor/EmployeeEditorView.xaml"/>
+        <ResourceDictionary Source="Editor/ProjectEditorView.xaml"/>
+        <ResourceDictionary Source="Editor/SalaryEditorView.xaml"/>
+        <ResourceDictionary Source="Editor/SiteEditorView.xaml"/>
+        <ResourceDictionary Source="Editor/VacationEditorView.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
+</ResourceDictionary>

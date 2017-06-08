@@ -1,0 +1,71 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:vms="clr-namespace:Da.ViewModels.AddEntityVms">
+
+    <!--Salary-->
+    <DataTemplate DataType="{x:Type vms:SalaryVm}">
+
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+
+            <!--Project-->
+            <Label Content="Project" Grid.Column="0" Grid.Row="0"/>
+            <ListBox ItemsSource="{Binding Path=AllProjects}"
+                     SelectedItem="{Binding Path=Salary.Project}"
+                     Grid.Column="1" Grid.Row="0"
+                     MaxHeight="150">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!--Employee-->
+            <Label Content="Employee" Grid.Column="0" Grid.Row="1"/>
+            <ListBox ItemsSource="{Binding Path=AllEmployees}"
+                     SelectedItem="{Binding Path=Salary.Employee}"
+                     Grid.Column="1" Grid.Row="1"
+                     MaxHeight="150">
+                <ListBox.ItemTemplate>
+                    <DataTemplate>
+                        <Label Content="{Binding Path=Name}"/>
+                    </DataTemplate>
+                </ListBox.ItemTemplate>
+            </ListBox>
+
+            <!--Amount-->
+            <Label Content="Amount" Grid.Column="0" Grid.Row="2"/>
+            <StackPanel Orientation="Horizontal" Grid.Column="1" Grid.Row="2">
+                <Slider Value="{Binding Path=Salary.Amount}"
+                        Name="slider"
+                        Minimum="0" Maximum="10000"
+                        Width="300" IsSnapToTickEnabled="True"/>
+                <Label Content="{Binding ElementName=slider, Path=Value}" Width="50"/>
+            </StackPanel>
+
+            <!--Date-->
+            <Label Content="Date" Grid.Column="0" Grid.Row="3"/>
+            <DatePicker Text="{Binding Path=Salary.Date}" Grid.Column="1" Grid.Row="3"/>
+
+            <!--Paid-->
+            <Label Content="Paid" Grid.Column="0" Grid.Row="4"/>
+            <CheckBox IsChecked="{Binding Path=Salary.Paid}"
+                      Grid.Column="1" Grid.Row="4"/>
+
+        </Grid>
+
+    </DataTemplate>
+
+</ResourceDictionary>
