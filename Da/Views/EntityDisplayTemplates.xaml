@@ -1,6 +1,36 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                    xmlns:entities="clr-namespace:Backend.Entities;assembly=Backend">
+                    xmlns:entities="clr-namespace:Backend.Entities;assembly=Backend"
+                    xmlns:displayableEntities="clr-namespace:Da.ViewModels.DisplayableEntities">
+
+    <ControlTemplate x:Key="DisplayableEntityView">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ContentPresenter Content="{Binding Entity}"  Grid.Column="0"/>
+            <Button Content="Edit" Command="{Binding Path=Edit}" Grid.Column="1" VerticalAlignment="Top"/>
+
+        </Grid>
+    </ControlTemplate>
+
+    <DataTemplate DataType="{x:Type displayableEntities:DisplayableEmployee}">
+        <Button Height="Auto" Template="{StaticResource DisplayableEntityView}"/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type displayableEntities:DisplayableProject}">
+        <Button Height="Auto" Template="{StaticResource DisplayableEntityView}"/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type displayableEntities:DisplayableSalary}">
+        <Button Height="Auto" Template="{StaticResource DisplayableEntityView}"/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type displayableEntities:DisplayableSite}">
+        <Button Height="Auto" Template="{StaticResource DisplayableEntityView}"/>
+    </DataTemplate>
+    <DataTemplate DataType="{x:Type displayableEntities:DisplayableVacation}">
+        <Button Height="Auto" Template="{StaticResource DisplayableEntityView}"/>
+    </DataTemplate>
     
     <DataTemplate DataType="{x:Type entities:Employee}">
         <Grid Width="500">

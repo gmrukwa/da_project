@@ -21,24 +21,24 @@
 
             <!--Name-->
             <Label Content="Name" Grid.Column="0" Grid.Row="0"/>
-            <TextBox Text="{Binding Path=Employee.Name}" Grid.Column="1" Grid.Row="0"/>
+            <TextBox Text="{Binding Path=Entity.Name}" Grid.Column="1" Grid.Row="0"/>
 
             <!--Position-->
             <Label Content="Position" Grid.Column="0" Grid.Row="1"/>
-            <TextBox Text="{Binding Path=Employee.Position}" Grid.Column="1" Grid.Row="1"/>
+            <TextBox Text="{Binding Path=Entity.Position}" Grid.Column="1" Grid.Row="1"/>
 
             <!--BirthDate-->
             <Label Content="BirthDate" Grid.Column="0" Grid.Row="2"/>
-            <DatePicker Text="{Binding Path=Employee.BirthDate}" Grid.Column="1" Grid.Row="2"/>
+            <DatePicker Text="{Binding Path=Entity.BirthDate}" Grid.Column="1" Grid.Row="2"/>
 
             <!--EmploymentDate-->
             <Label Content="EmploymentDate" Grid.Column="0" Grid.Row="3"/>
-            <DatePicker Text="{Binding Path=Employee.EmploymentDate}" Grid.Column="1" Grid.Row="3"/>
+            <DatePicker Text="{Binding Path=Entity.EmploymentDate}" Grid.Column="1" Grid.Row="3"/>
 
             <!--Site-->
-            <Label Content="Site" Grid.Column="0" Grid.Row="4"/>
+            <Label Content="Entity" Grid.Column="0" Grid.Row="4"/>
             <ListBox ItemsSource="{Binding Path=Sites}"
-                     SelectedItem="{Binding Path=Employee.Site}"
+                     SelectedItem="{Binding Path=Entity.Site}"
                      Grid.Column="1" Grid.Row="4">
                 <ListBox.ItemTemplate>
                     <DataTemplate>

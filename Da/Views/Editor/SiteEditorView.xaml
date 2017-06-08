@@ -19,16 +19,16 @@
             
             <!--Name-->
             <Label Content="Name" Grid.Column="0" Grid.Row="0"/>
-            <TextBox Text="{Binding Site.Name}" Grid.Column="1" Grid.Row="0"/>
+            <TextBox Text="{Binding Entity.Name}" Grid.Column="1" Grid.Row="0"/>
             
             <!--Address-->
             <Label Content="Address" Grid.Column="0" Grid.Row="1"/>
-            <TextBox Text="{Binding Site.Address}" Grid.Column="1" Grid.Row="1"/>
+            <TextBox Text="{Binding Entity.Address}" Grid.Column="1" Grid.Row="1"/>
 
             <!--Boss-->
             <Label Content="Boss" Grid.Column="0" Grid.Row="2"/>
             <ListBox ItemsSource="{Binding Path=AllEmployees}"
-                     SelectedItem="{Binding Path=Site.Boss}"
+                     SelectedItem="{Binding Path=Entity.Boss}"
                      Grid.Column="1" Grid.Row="2"
                      MaxHeight="150">
                 <ListBox.ItemTemplate>

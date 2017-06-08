@@ -1,25 +1,16 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.ObjectModel;
 using Backend.Entities;
 using Da.Services;
-using Spectre.Mvvm.Base;
 
 namespace Da.ViewModels.AddEntityVms
 {
-    class SalaryVm: AddEntityVm<Salary>
+    class SalaryVm: EditableEntityVm<Salary>
     {
-        public Salary Salary { get { return GetValue(() => Salary); } set { SetValue(() => Salary, value);} }
-
         public ObservableCollection<Project> AllProjects { get { return GetValue(() => AllProjects); } set { SetValue(() => AllProjects, value);} }
         public ObservableCollection<Employee> AllEmployees { get { return GetValue(() => AllEmployees); } set { SetValue(() => AllEmployees, value); } }
 
-        public SalaryVm(Salary salary, DataService dataService) : base(dataService)
+        public SalaryVm(Salary salary, DataService dataService) : base(salary, dataService)
         {
-            Salary = salary;
             AllEmployees = new ObservableCollection<Employee>(DataService.GetData<Employee>());
             AllProjects = new ObservableCollection<Project>(DataService.GetData<Project>());
         }
