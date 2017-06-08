@@ -17,7 +17,7 @@ namespace Backend.Entities
         public DateTime EmploymentDate { get { return GetValue(() => EmploymentDate); } set { SetValue(() => EmploymentDate, value); } }
         public int SiteId { get { return GetValue(() => SiteId); } set { SetValue(() => SiteId, value); } }
         [ForeignKey(nameof(SiteId))]
-        public virtual Site Site { get { return GetValue(() => Site); } set { SetValue(() => Site, value); } }
+        public Site Site { get { return GetValue(() => Site); } set { SetValue(() => Site, value); } }
         [InverseProperty("Manager")]
         public List<Project> ManagedProjects { get { return GetValue(() => ManagedProjects); } set { SetValue(() => ManagedProjects, value); } }
         [InverseProperty("Boss")]
