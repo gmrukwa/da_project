@@ -33,7 +33,7 @@
     </DataTemplate>
     
     <DataTemplate DataType="{x:Type entities:Employee}">
-        <Grid Width="500">
+        <Grid Width="550">
 
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -53,7 +53,7 @@
     </DataTemplate>
     
     <DataTemplate DataType="{x:Type entities:Project}">
-        <Grid Width="500">
+        <Grid Width="550">
             
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
@@ -75,7 +75,7 @@
     </DataTemplate>
     
     <DataTemplate DataType="{x:Type entities:Salary}">
-        <Grid Width="500">
+        <Grid Width="550">
             
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -95,7 +95,7 @@
     </DataTemplate>
     
     <DataTemplate DataType="{x:Type entities:Site}">
-        <Grid Width="500">
+        <Grid Width="550">
             
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
@@ -111,7 +111,7 @@
     </DataTemplate>
     
     <DataTemplate DataType="{x:Type entities:Vacation}">
-        <Grid Width="500">
+        <Grid Width="550">
             
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
