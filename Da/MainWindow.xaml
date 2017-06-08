@@ -43,53 +43,119 @@
                     Command="{Binding RefreshCommand}"/>
         </StackPanel>
             
-        <!--<DataGrid x:Name="dataGrid"
-                  HorizontalAlignment="Left"
-                  Margin="10"
-                  VerticalAlignment="Top"
-                  Grid.Row="1"
-                  ItemsSource="{Binding Path=Employees}"/>-->
-        
-        <TabControl x:Name="tabControl" HorizontalAlignment="Left" Grid.Row="1">
+        <TabControl HorizontalAlignment="Left" Grid.Row="1">
             <TabItem Header="Employees">
-                <Grid Background="#FFE5E5E5">
+                <StackPanel Background="#FFE5E5E5">
+
+                    <Grid Width="550" HorizontalAlignment="Left" Margin="20,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Name" Grid.Column="0"/>
+                        <Label Content="Position" Grid.Column="1"/>
+                        <Label Content="Birth Date" Grid.Column="2"/>
+                        <Label Content="Employment Date" Grid.Column="3"/>
+                        <Label Content="Site Name" Grid.Column="4"/>
+
+                    </Grid>
                     <ListView Margin="10"
-                              ItemsSource="{Binding Path=Employees}">
-                        
-                    </ListView>
-                </Grid>
+                              ItemsSource="{Binding Path=Employees}"/>
+                    
+                </StackPanel>
             </TabItem>
             <TabItem Header="Projects">
-                <Grid Background="#FFE5E5E5">
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Projects}">
+                <StackPanel Background="#FFE5E5E5">
 
-                    </ListView>
-                </Grid>
+                    <Grid Width="550" HorizontalAlignment="Left" Margin="20,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Name" Grid.Column="0"/>
+                        <Label Content="Start Date" Grid.Column="1"/>
+                        <Label Content="Manager Name" Grid.Column="2"/>
+
+                    </Grid>
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Projects}"/>
+                    
+                </StackPanel>
             </TabItem>
             <TabItem Header="Salaries">
-                <Grid Background="#FFE5E5E5">
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Salaries}">
+                <StackPanel Background="#FFE5E5E5">
 
-                    </ListView>
-                </Grid>
+                    <Grid Width="550" HorizontalAlignment="Left" Margin="20,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="40"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Employee Name" Grid.Column="0"/>
+                        <Label Content="Project Name" Grid.Column="1"/>
+                        <Label Content="Amount" Grid.Column="2"/>
+                        <Label Content="Date" Grid.Column="3"/>
+                        <Label Content="Paid" Grid.Column="4"/>
+                        
+                    </Grid>
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Salaries}"/>
+                    
+                </StackPanel>
             </TabItem>
             <TabItem Header="Sites">
-                <Grid Background="#FFE5E5E5">
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Sites}">
+                <StackPanel Background="#FFE5E5E5">
 
-                    </ListView>
-                </Grid>
+                    <Grid Width="550" HorizontalAlignment="Left" Margin="20,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Name" Grid.Column="0"/>
+                        <Label Content="Address" Grid.Column="1"/>
+                        <Label Content="Boss Name" Grid.Column="2"/>
+
+                    </Grid>
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Sites}"/>
+                    
+                </StackPanel>
             </TabItem>
             <TabItem Header="Vacations">
-                <Grid Background="#FFE5E5E5">
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Vacations}">
+                <StackPanel Background="#FFE5E5E5">
 
-                    </ListView>
-                </Grid>
+                    <Grid Width="550" HorizontalAlignment="Left" Margin="20,0">
+
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+
+                        <Label Content="Employee Name" Grid.Column="0"/>
+                        <Label Content="Beginning Date" Grid.Column="1"/>
+                        <Label Content="End Date" Grid.Column="2"/>
+
+                    </Grid>
+                    <ListView Margin="10"
+                              ItemsSource="{Binding Path=Vacations}"/>
+                    
+                </StackPanel>
             </TabItem>
         </TabControl>
 
