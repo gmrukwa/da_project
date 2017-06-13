@@ -3,7 +3,6 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Da"
         xmlns:vm="clr-namespace:Da.ViewModels"
         mc:Ignorable="d"
         Title="MainWindow"
@@ -46,7 +45,7 @@
                     Command="{Binding SummarizePayoffs}"/>
         </StackPanel>
             
-        <TabControl HorizontalAlignment="Left" Grid.Row="1">
+        <TabControl HorizontalAlignment="Left" Grid.Row="1" Width="750">
             <TabItem Header="Employees">
                 <StackPanel Background="#FFE5E5E5">
 
@@ -67,9 +66,12 @@
                         <Label Content="Site Name" Grid.Column="4"/>
 
                     </Grid>
+                    <ScrollViewer>
                     <ListView Margin="10"
+                              MinHeight="300"
                               ItemsSource="{Binding Path=Employees}"/>
-                    
+                    </ScrollViewer>
+
                 </StackPanel>
             </TabItem>
             <TabItem Header="Projects">
@@ -88,8 +90,11 @@
                         <Label Content="Manager Name" Grid.Column="2"/>
 
                     </Grid>
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Projects}"/>
+                    <ScrollViewer>
+                        <ListView Margin="10"
+                                  MinHeight="300"
+                                  ItemsSource="{Binding Path=Projects}"/>
+                    </ScrollViewer>
                     
                 </StackPanel>
             </TabItem>
@@ -111,11 +116,13 @@
                         <Label Content="Amount" Grid.Column="2"/>
                         <Label Content="Date" Grid.Column="3"/>
                         <Label Content="Paid" Grid.Column="4"/>
-                        
+
                     </Grid>
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Salaries}"/>
-                    
+                    <ScrollViewer>
+                        <ListView Margin="10"
+                                  MinHeight="300"
+                                  ItemsSource="{Binding Path=Salaries}"/>
+                    </ScrollViewer>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Sites">
@@ -134,9 +141,11 @@
                         <Label Content="Boss Name" Grid.Column="2"/>
 
                     </Grid>
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Sites}"/>
-                    
+                    <ScrollViewer>
+                        <ListView Margin="10"
+                                  MinHeight="300"
+                                  ItemsSource="{Binding Path=Sites}"/>
+                    </ScrollViewer>
                 </StackPanel>
             </TabItem>
             <TabItem Header="Vacations">
@@ -155,9 +164,11 @@
                         <Label Content="End Date" Grid.Column="2"/>
 
                     </Grid>
-                    <ListView Margin="10"
-                              ItemsSource="{Binding Path=Vacations}"/>
-                    
+                    <ScrollViewer>
+                        <ListView Margin="10"
+                                  MinHeight="300"
+                                  ItemsSource="{Binding Path=Vacations}"/>
+                    </ScrollViewer>
                 </StackPanel>
             </TabItem>
         </TabControl>

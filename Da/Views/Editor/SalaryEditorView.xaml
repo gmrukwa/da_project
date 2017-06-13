@@ -20,7 +20,7 @@
             </Grid.RowDefinitions>
 
             <!--Project-->
-            <Label Content="Entity" Grid.Column="0" Grid.Row="0"/>
+            <Label Content="Project" Grid.Column="0" Grid.Row="0"/>
             <ListBox ItemsSource="{Binding Path=AllProjects}"
                      SelectedItem="{Binding Path=Entity.Project}"
                      Grid.Column="1" Grid.Row="0"
@@ -33,7 +33,7 @@
             </ListBox>
 
             <!--Employee-->
-            <Label Content="Entity" Grid.Column="0" Grid.Row="1"/>
+            <Label Content="Employee" Grid.Column="0" Grid.Row="1"/>
             <ListBox ItemsSource="{Binding Path=AllEmployees}"
                      SelectedItem="{Binding Path=Entity.Employee}"
                      Grid.Column="1" Grid.Row="1"
