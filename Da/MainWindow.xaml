@@ -41,6 +41,9 @@
 
             <Button Content="Refresh"
                     Command="{Binding RefreshCommand}"/>
+
+            <Button Content="Summarize payoffs"
+                    Command="{Binding SummarizePayoffs}"/>
         </StackPanel>
             
         <TabControl HorizontalAlignment="Left" Grid.Row="1">

@@ -13,12 +13,14 @@ namespace Da.ViewModels
         private readonly DataService _dataService;
         private readonly EditorService _editorService;
         private readonly RefreshingService _refreshingService;
+        private readonly SummaryService _summaryService;
 
         public MainWindowVm()
         {
             _dataService = new DataService();
             _refreshingService = new RefreshingService(this);
             _editorService = new EditorService(_dataService, _refreshingService);
+            _summaryService = new SummaryService();
             RefreshCommand.Execute(null);
         }
 
@@ -169,6 +171,19 @@ namespace Da.ViewModels
                 {
                     _editorService.EditNew<Vacation>();
                 }));
+            }
+        }
+        #endregion
+
+        #region SummarizePayoffs
+        private RelayCommand _summarizePayoffs;
+
+        public RelayCommand SummarizePayoffs
+        {
+            get
+            {
+                return _summarizePayoffs ?? (_summarizePayoffs =
+                           new RelayCommand(() => _summaryService.CountPayoffs()));
             }
         }
         #endregion
