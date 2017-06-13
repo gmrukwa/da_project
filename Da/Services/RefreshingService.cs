@@ -1,4 +1,5 @@
-﻿using Da.ViewModels;
+﻿using System;
+using Da.ViewModels;
 
 namespace Da.Services
 {
@@ -12,7 +13,10 @@ namespace Da.Services
         public void Refresh()
         {
             _vm.RefreshCommand.Execute(null);
+            OnRefresh?.Invoke(this, EventArgs.Empty);
         }
+
+        public EventHandler OnRefresh;
 
         private readonly MainWindowVm _vm;
     }

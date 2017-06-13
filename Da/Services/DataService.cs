@@ -9,7 +9,7 @@ namespace Da.Services
 {
     class DataService
     {
-        public DataService(bool startFromScratch = true)
+        public DataService(bool startFromScratch = false)
         {
             if (startFromScratch)
                 BuildSampleDatabasePopulation();
@@ -19,8 +19,13 @@ namespace Da.Services
         {
             using (var context = new Context())
             {
-                return context.Get<T>().ToList();
+                return context.Get<T>();
             }
+        }
+
+        public IEnumerable<T> GetData<T>(Context context) where T : Entity
+        {
+            return context.Get<T>();
         }
 
         // @gmrukwa: This one is useful for downloading lazily fetched deps

@@ -15,7 +15,7 @@ namespace Backend.Entities
         public DateTime BirthDate { get { return GetValue(() => BirthDate); } set { SetValue(() => BirthDate, value); } }
         [Column(TypeName = "datetime2")]
         public DateTime EmploymentDate { get { return GetValue(() => EmploymentDate); } set { SetValue(() => EmploymentDate, value); } }
-        public int SiteId { get { return GetValue(() => SiteId); } set { SetValue(() => SiteId, value); } }
+        public int? SiteId { get { return GetValue(() => SiteId); } set { SetValue(() => SiteId, value); } }
         [ForeignKey(nameof(SiteId))]
         public Site Site { get { return GetValue(() => Site); } set { SetValue(() => Site, value); } }
         [InverseProperty("Manager")]

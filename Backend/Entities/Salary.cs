@@ -11,7 +11,7 @@ namespace Backend.Entities
         public int? ProjectId { get { return GetValue(() => ProjectId); } set { SetValue(() => ProjectId, value); } }
         [ForeignKey(nameof(ProjectId))]
         public Project Project { get { return GetValue(() => Project); } set { SetValue(() => Project, value); } }
-        public int? EmployeeId { get { return GetValue(() => EmployeeId); } set { SetValue(() => EmployeeId, value); } }
+        public int EmployeeId { get { return GetValue(() => EmployeeId); } set { SetValue(() => EmployeeId, value); } }
         [ForeignKey(nameof(EmployeeId))]
         public Employee Employee { get { return GetValue(() => Employee); } set { SetValue(() => Employee, value); } }
         public double Amount { get { return GetValue(() => Amount); } set { SetValue(() => Amount, value); } }

@@ -6,5 +6,6 @@ namespace Da.ViewModels
     {
         object Entity { get; }
         RelayCommand Edit { get; }
+        RelayCommand Delete { get; }
     }
 }

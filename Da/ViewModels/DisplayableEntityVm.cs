@@ -28,5 +28,18 @@ namespace Da.ViewModels
                 }));
             }
         }
+
+        private RelayCommand _delete;
+
+        public RelayCommand Delete
+        {
+            get
+            {
+                return _delete ?? (_delete = new RelayCommand(() =>
+                {
+                    _editor.Delete(Entity as T);
+                }));
+            }
+        }
     }
 }

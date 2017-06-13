@@ -8,10 +8,12 @@
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="Auto"/>
             </Grid.ColumnDefinitions>
 
             <ContentPresenter Content="{Binding Entity}"  Grid.Column="0"/>
             <Button Content="Edit" Command="{Binding Path=Edit}" Grid.Column="1" VerticalAlignment="Top"/>
+            <Button Content="Delete" Command="{Binding Path=Delete}" Grid.Column="2" VerticalAlignment="Top"/>
 
         </Grid>
     </ControlTemplate>

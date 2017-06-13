@@ -36,7 +36,7 @@
             <DatePicker Text="{Binding Path=Entity.EmploymentDate}" Grid.Column="1" Grid.Row="3"/>
 
             <!--Site-->
-            <Label Content="Entity" Grid.Column="0" Grid.Row="4"/>
+            <Label Content="Site" Grid.Column="0" Grid.Row="4"/>
             <ListBox ItemsSource="{Binding Path=Sites}"
                      SelectedItem="{Binding Path=Entity.Site}"
                      Grid.Column="1" Grid.Row="4">
